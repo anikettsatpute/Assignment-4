@@ -1,0 +1,69 @@
+\documentclass{beamer}
+
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cdf}[2]{\ensuremath{\text{F}_{#1}\left(#2\right)}}
+
+\title{Assignment-4} 
+\author{Aniket Satpute (CS21BTECH11056)}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+\logo{}
+
+
+
+\section{Problem}
+\begin{frame}{Problem Statement}
+
+\textbf{(Papoulis pillai probability RandomVariable Example 4-20)} A fair coin is tossed 1000 times. Find the probability $P_a$ that heads will show 500
+times and the probability $P_b$ that heads will show 510 times.
+\end{frame}
+
+\section{Solution}
+
+\begin{frame}{Solution}
+p = q = 0.5 , n = 1000 , $\sqrt{npq} = 5\sqrt{10} $
+\begin{exampleblock}{DeMoivre-Laplace Theorem}
+\begin{align}
+{n\choose k }p^{k} q^{n-k} \simeq \frac{1}{\sqrt{2 \pi n p q }} e^{-(k-np)^{2} / 2npq} 
+\end{align}
+p+q=1
+\end{exampleblock}
+\end{frame} 
+
+\begin{frame}
+
+\begin{alertblock}{(a) if k = 500}
+
+then k - np = 0 and equation (1) yields
+\begin{align*}
+p_{a} & \simeq \frac{1}{\sqrt{2 \pi npq}}\\
+&= \frac{1}{10\sqrt{5 \pi}}\\
+&= 0.0252
+\end{align*}
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{alertblock}{(b) If k = 510}
+then k - np = 10 and equation (1) yields
+\begin{align*}
+p_{b} & \simeq \frac{e^{-0,2}}{ 10\sqrt{5 \pi}}\\
+&= 0.0207
+\end{align*}
+\end{alertblock}
+    
+\end{frame}
+
+\end{document}
